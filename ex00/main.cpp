@@ -21,12 +21,12 @@ int main() {
     std::cout << std::endl;
 
     // Clap1 attacks Clap2
-    clap1.attack(clap2);
+    clap1.attackTarget(clap2);
     clap2.status();  // Check if damage was applied to Clap2
     std::cout << std::endl;
 
     // Clap2 attacks Clap1
-    clap2.attack(clap1);
+    clap2.attackTarget(clap1);
     clap1.status();  // Check if damage was applied to Clap1
 
     std::cout << std::endl;
@@ -54,7 +54,7 @@ int main() {
     clap4.setAttackDamage(2);
 
     for (int i = 0; i < 11; ++i) {
-        clap4.attack(clap2); // Should deplete energy after multiple attacks
+        clap4.attackTarget(clap2); // Should deplete energy after multiple attacks
     }
     std::cout << std::endl;
 
@@ -72,9 +72,9 @@ int main() {
     ClapTrap clap6("Clap6");
     clap6.setAttackDamage(4);
 
-    clap6.attack(clap1); // Clap6 attacks Clap1
-    clap1.attack(clap6); // Clap1 retaliates
-    clap5.attack(clap6); // Clap5 joins the attack
+    clap6.attackTarget(clap1); // Clap6 attacks Clap1
+    clap1.attackTarget(clap6); // Clap1 retaliates
+    clap5.attackTarget(clap6); // Clap5 joins the attack
     clap6.status();      // Check Clap6's status after being attacked by multiple ClapTraps
 
     std::cout << std::endl;
