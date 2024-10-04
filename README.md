@@ -45,3 +45,18 @@ class PrivateDerived : private Base {
 **Destructors:**
 - B does not inherit A's dtor;
 - After it exits, B's destructor will automatically call A's destructor.
+
+## Virtual Inheritance
+
+The ``virtual`` keyword in the inheritance declaration is used to solve the "diamond problem" in multiple inheritance. The diamond problem occurs when a class inherits from two classes that both inherit from a common base class. This can lead to ambiguity and redundancy in the inheritance hierarchy.
+
+In your case, the DiamondTrap class inherits from both FragTrap and ScavTrap, which both inherit from ClapTrap. Without virtual inheritance, DiamondTrap would have two separate ClapTrap base class subobjects, leading to ambiguity and redundancy.
+
+Here's a simplified illustration of the diamond problem:
+       ClapTrap
+       /     \
+  ScavTrap   FragTrap
+       \     /
+     DiamondTrap
+
+By using virtual inheritance, you ensure that there is only one shared ClapTrap base class subobject in DiamondTrap.

@@ -18,8 +18,10 @@ int main() {
     std::cout << "== Inherited Attack Function Test ==" << std::endl;
     ClapTrap clap1("Clappy");
     scav2.attackTarget(clap1);  // ScavTrap attacking ClapTrap
+    scav2.attackTarget(scav1);  // ScavTrap attacking ScavTrap
     clap1.status();       // Check ClapTrap's status after attack
     scav2.status();       // Check ScavTrap's status after attack
+    scav1.status();       // Check ScavTrap's status after attack
 
     std::cout << std::endl;
 

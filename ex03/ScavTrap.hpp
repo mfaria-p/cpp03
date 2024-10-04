@@ -1,10 +1,10 @@
-#ifndef SCAVTRAP_HPP
-#define SCAVTRA_HPP
+#ifndef EX03_SCAVTRAP_HPP
+#define EX03_SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 
 // its constructors, destructor and attack() will print different messages.
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 public:
     ScavTrap();
