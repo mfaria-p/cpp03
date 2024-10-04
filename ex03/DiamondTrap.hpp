@@ -12,7 +12,9 @@ private:
 public:
     DiamondTrap();
     DiamondTrap( const std::string _name );
+    DiamondTrap(const DiamondTrap& obj);
     ~DiamondTrap();
+    DiamondTrap &operator=(const DiamondTrap &obj);
     using ScavTrap::attack;
     void whoiam( void );
 };

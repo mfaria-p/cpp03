@@ -35,4 +35,32 @@ int main() {
     dt.status();  // Should reflect new attack damage
     std::cout << std::endl;
 
+    std::cout << "\n--- Copying DiamondTrap (Copy Constructor) ---" << std::endl;
+
+    DiamondTrap original("OriginalDT");
+    original.status();  // Show the status of the original
+
+    // Creating a copy of the original DiamondTrap
+    DiamondTrap copy(original);  // This should invoke the copy constructor
+    copy.status();  // Show the status of the copied object to ensure everything is copied
+
+    std::cout << "\n--- Modifying the Copy ---" << std::endl;
+    copy.setAttackDamage(70);  // Modify the copied object to check independence
+    copy.takeDamage(30);  // Apply damage to the copy
+    copy.status();  // Show the updated status of the copy
+
+    std::cout << "\n--- Verifying Original Remains Unchanged ---" << std::endl;
+    // Ensure the original object has not been affected by the changes to the copy
+    original.status();  // The original should have the same stats as before
+    std::cout << std::endl;
+
+    // Step 7: Test DiamondTrap Assignment Operator
+    std::cout << "== DiamondTrap Assignment Operator Test ==" << std::endl;
+    DiamondTrap dia1;
+    dia1 = dt;          // Assignment operator
+    dia1.whoiam();      // Check names of assigned DiamondTrap
+    dia1.attack ("TargetDummy3");
+    dia1.status();         // Check status of assigned DiamondTrap
+    std::cout << std::endl;
+
 }

@@ -19,6 +19,25 @@ DiamondTrap::DiamondTrap(const std::string _name)
     std::cout << "DiamondTrap " << this->_name << " is born!" << std::endl;
 }
 
+DiamondTrap::DiamondTrap(const DiamondTrap& obj) : ClapTrap(obj), ScavTrap(obj), FragTrap(obj), _name(obj._name)
+{
+    *this = obj;
+    std::cout << "DiamondTrap " << this->_name << " is born!" << std::endl;
+}
+
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &obj) {
+    if (this != &obj)
+    {
+        ScavTrap::operator=(obj);
+        FragTrap::operator=(obj);
+        _name = obj._name;
+        _hitPoints = obj._hitPoints;
+        _energyPoints = obj._energyPoints;
+        _attackDamage = obj._attackDamage;
+    }
+    return *this;
+}
+
 DiamondTrap::~DiamondTrap()
 {
     std::cout << "DiamondTrap " << this->_name << " died!" << std::endl;

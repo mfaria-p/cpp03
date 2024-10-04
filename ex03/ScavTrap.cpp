@@ -29,6 +29,17 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap " << _name << " died!" << std::endl;
 }
 
+ScavTrap &ScavTrap::operator=(const ScavTrap &obj) {
+    if (this != &obj)
+    {
+        this->_name = obj._name;
+        this->_hitPoints = obj._hitPoints;
+        this->_energyPoints = obj._energyPoints;
+        this->_attackDamage = obj._attackDamage;
+    }
+    return *this;
+}
+
 void ScavTrap::guardGate( void )
 {
     std::cout << "ScavTrap " << _name << " has entered in Gate keeper mode!" << std::endl;
