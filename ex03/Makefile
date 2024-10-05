@@ -7,13 +7,16 @@ SRCS =	ClapTrap.cpp \
 OBJS = $(SRCS:.cpp=.o)
 
 NAME = diamondtrap
-CC = c++
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+CXX = c++
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

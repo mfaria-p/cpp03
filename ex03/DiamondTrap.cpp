@@ -43,7 +43,7 @@ DiamondTrap::~DiamondTrap()
     std::cout << "DiamondTrap " << this->_name << " died!" << std::endl;
 }
 
-void DiamondTrap::whoiam(void)
+void DiamondTrap::whoAmI(void)
 {
     std::cout << "My ClapTrap name is " << ClapTrap::_name << std::endl;
     std::cout << "My DiamondTrap name is " << this->_name << std::endl;

@@ -26,8 +26,8 @@ int main() {
     dt.highFivesGuys();  // Should use FragTrap's high-five method
 
     std::cout << "\n--- Testing DiamondTrap-Specific Method ---" << std::endl;
-    // Test DiamondTrap's own method whoiam
-    dt.whoiam();  // Should print both ClapTrap name and DiamondTrap name
+    // Test DiamondTrap's own method whoAmI
+    dt.whoAmI();  // Should print both ClapTrap name and DiamondTrap name
 
     // Test 3: Modifying attributes to ensure inheritance hierarchy is respected
     std::cout << "\n--- Testing DiamondTrap Atribution ---" << std::endl;
@@ -58,7 +58,7 @@ int main() {
     std::cout << "== DiamondTrap Assignment Operator Test ==" << std::endl;
     DiamondTrap dia1;
     dia1 = dt;          // Assignment operator
-    dia1.whoiam();      // Check names of assigned DiamondTrap
+    dia1.whoAmI();      // Check names of assigned DiamondTrap
     dia1.attack ("TargetDummy3");
     dia1.status();         // Check status of assigned DiamondTrap
     std::cout << std::endl;
