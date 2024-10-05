@@ -55,5 +55,10 @@ int main() {
     frag4.status();         // Check status of assigned FragTrap
     std::cout << std::endl;
 
+    std::cout << "== Deal with undefined behaviour with pointers ==" << std::endl;
+    ClapTrap* clapp = new FragTrap();
+    delete clapp;
+    std::cout << std::endl;
+
     return 0;
 }

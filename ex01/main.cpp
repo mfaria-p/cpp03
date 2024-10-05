@@ -53,6 +53,10 @@ int main() {
     ScavTrap scav4;
     scav4 = scav2;          // Assignment operator
     scav4.status();         // Check status of assigned ScavTrap
+    std::cout << std::endl;
 
+    std::cout << "== Deal with undefined behaviour with pointers ==" << std::endl;
+    ClapTrap* clapp = new ScavTrap();
+    delete clapp;
     std::cout << std::endl;
 }

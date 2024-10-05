@@ -63,4 +63,9 @@ int main() {
     dia1.status();         // Check status of assigned DiamondTrap
     std::cout << std::endl;
 
+    std::cout << "== Deal with undefined behaviour with pointers ==" << std::endl;
+    ScavTrap* clapp = new DiamondTrap();
+    delete clapp;
+    std::cout << std::endl;
+
 }

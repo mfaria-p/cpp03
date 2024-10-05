@@ -16,7 +16,7 @@ class ClapTrap {
         ClapTrap(); //default constructor
         ClapTrap(std::string name); //parameterized constructor
         ClapTrap(const ClapTrap &obj); //copy constructor
-        ~ClapTrap(); //destructor
+        virtual ~ClapTrap(); //destructor
         ClapTrap &operator=(const ClapTrap &obj); //assignment operator
         virtual void attack(std::string const &target);
         void attackTarget(ClapTrap &target);
